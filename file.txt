@@ -1,0 +1,1 @@
+в master зробити зміни в file.txt
