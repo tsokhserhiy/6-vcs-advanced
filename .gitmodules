@@ -1,0 +1,3 @@
+[submodule "myfirstrepo"]
+	path = myfirstrepo
+	url = https://github.com/tsokhserhiy/myfirstrepo
