@@ -1,0 +1,111 @@
+1.Робота з бренчами
+
+Створив новий репозиторій 6-vcs-advanced;
+$ git clone https://github.com/tsokhserhiy/6-vcs-advanced.git
+$ cd 6-vcs-advanced
+$ touch .gitignore
+$ git add .
+$ git commit -m "added .gitignore file"
+$ git branch architecture
+$ git checkout architecture
+$ mkdir assets
+$ mkdir uploads
+$ touch index.html
+$ git status
+$ git add .
+$ git commit -m "додано файл index.html"
+через провідник додав файли в папки assets та uploads
+$ git status
+$ git add .
+$ git commit -m "added  new folders"
+$ touch assets/all.js
+$ touch assets/css.js
+$ git status
+$ git add .
+$ git commit -m "added new files all.js & css.js"
+$ git push origin architecture
+$ echo "uploads/" > .gitignore
+$ git add .
+$ git commit -m "created gitignore"
+$ git push origin architecture
+$ git checkout master
+$ git merge architecture
+$ git push
+$ git branch --delete architecture
+$ git push origin master
+
+2.Rebase
+
+$ git branch task2
+$ mkdir task2
+$ git status
+$ touch task2/test.txt
+$ git status
+$ git add .
+$ git commit -m "added test.txt in folder task2"
+$ touch text.txt
+$ git add .
+$ git commit -m "added new file text.txt"
+$ git checkout task2
+$ git rebase master
+$ touch file.txt
+$ git add .
+$ git commit -m "added new file to branch"
+$ git checkout master
+$ git merge task2
+$ git branch -d task2
+$ git push
+
+3.tag
+
+$ touch task3-1.txt
+$ git add .
+$ git commit -m " added task3-1.txt file"
+$ touch task 3-2.txt
+$ git add .
+$ git commit -m "added task3-2.txt"
+$ git tag m1
+$ git push
+$ git status
+$ git push origin m1
+
+https://github.com/tsokhserhiy/6-vcs-advanced/tags
+
+4.Submodule
+
+$ git submodule add https://github.com/tsokhserhiy/myfirstrepo
+$ git status
+$ git add .
+$ git push
+
+5.Git Pages
+
+$ git branch gh-pages
+$ git checkout gh-pages
+$ echo "<h1>Hello GitHub" > index.html
+$ git add .
+$ git commit -m "added gh-pages"
+$ git push origin gh-pages
+$ echo "<h1>change</h1>" > index.html
+$ git add .
+$ git commit -m "change in index.html"
+$ git push origin gh-pages
+
+https://tsokhserhiy.github.io/6-vcs-advanced/
+
+6.Conflict
+
+$ git checkout master
+$ echo "в branch зробити зміни в file.txt (несумісні з попередніми - наприклад повна заміна контенту файлу)" > file.txt
+$ git checkout -b test-task6
+$ echo "в master зробити зміни в file.txt" > file.txt
+$ git add .
+$ git commit -m "change in file.txt"
+$ git checkout master
+$ git merge test-task6
+$ git merge --abort
+      fatal: There is no merge to abort (MERGE_HEAD missing).
+$ git merge test-task6
+$ git add .
+$ git commit -m "fixed conflict"
+$ git push
