@@ -24,7 +24,7 @@ $ git status
 $ git add .
 $ git commit -m "added new files all.js & css.js"
 $ git push origin architecture
-$ echo "uploads/" > .gitignore
+$ echo "/uploads/*" > .gitignore
 $ git add .
 $ git commit -m "created gitignore"
 $ git push origin architecture
